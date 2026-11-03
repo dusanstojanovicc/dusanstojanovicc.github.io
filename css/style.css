@@ -328,3 +328,81 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;paddin
 .sc-bg .si{will-change:transform;overflow:hidden}
 .sc-bg .kbw{position:absolute;inset:0;will-change:transform}
 .sc-bg .kbw img{width:100%;height:100%;object-fit:cover;will-change:transform}
+
+/* ================= MOBILE (phones): bigger sections, full-screen projects, no horizontal scroll jacking ================= */
+@media (max-width:900px){
+  :root{--pad:22px}
+  body{font-size:17px}
+  nav{padding:16px var(--pad)}
+  .n-left{font-size:10px}
+  /* hero: full-bleed photo, headline on top, nothing else */
+  .hero{height:100svh;min-height:600px;display:block}
+  .hero .pt{position:absolute;inset:0;left:0;right:0;top:0;margin:0;width:100%;height:100%;aspect-ratio:auto}
+  .hero .pt img{height:100%;object-position:50% 12%}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,6,4,.35) 0%,rgba(8,6,4,0) 28%,rgba(8,6,4,0) 45%,rgba(8,6,4,.78) 100%);pointer-events:none}
+  .hero h1{position:absolute;left:0;right:0;bottom:11vh;margin:0;padding:0 var(--pad);text-align:left;font-size:15.5vw;line-height:.9;mix-blend-mode:normal;color:#fff;z-index:2}
+  .hero .bot{left:var(--pad);right:var(--pad);bottom:24px;z-index:3}
+  .hero .bot .label{color:#e6e1d7}
+  .scroll i{background:rgba(255,255,255,.4)}.scroll i::after{background:#fff}
+  /* intro statement */
+  .intro{padding:110px var(--pad) 90px;display:block}
+  .intro .label{display:block;margin-bottom:26px}
+  .intro p{font-size:9.2vw;line-height:1.02}
+  /* showcase: full screen */
+  .sc-title{font-size:16vw;max-width:92vw}
+  .sc-desc{font-size:11px;max-width:30ch;margin:22px auto 26px}
+  .explore{font-size:30px}
+  .sc-top{top:78px}
+  .sc-all{bottom:26px}
+  .sc-prog{bottom:26px;left:var(--pad);width:70px}
+  .sc-count{bottom:26px;right:var(--pad)}
+  /* more work: simple vertical full-width cards (no horizontal pin) */
+  .hz{height:auto;overflow:visible;padding:100px 0 40px}
+  .hz-head{position:static;padding:0 var(--pad) 30px}
+  .hz-track{flex-direction:column;width:100%;height:auto;gap:26px;padding:0 var(--pad);transform:none!important}
+  .card,.card.big{width:100%}
+  .card .shot{aspect-ratio:4/5;box-shadow:none}
+  .card .mob{display:none}
+  .card .cap{flex-direction:column;gap:6px;margin-top:16px}
+  .card h3{font-size:12vw}
+  /* about */
+  .about{padding:110px var(--pad);gap:50px}
+  .about h2{font-size:15vw;margin-bottom:34px}
+  .about .pt{aspect-ratio:4/5}
+  .about p.big{font-size:27px}
+  .facts{grid-template-columns:1fr;gap:20px}
+  /* expertise */
+  .exp{padding:100px var(--pad)}
+  .exp>h2{font-size:18vw;margin-bottom:50px}
+  .exp-row{padding:34px 0;gap:14px}
+  .exp-row h3{font-size:13vw}
+  .exp-row ul{font-size:18px}
+  /* process: simple stacked panels instead of horizontal scroll */
+  .pr{height:auto;overflow:visible}
+  .pr-track{flex-direction:column;width:100%;height:auto}
+  .pn{width:100%;flex:none;height:auto;min-height:78svh;padding:90px var(--pad) 50px;gap:60px}
+  .pn h3{font-size:22vw}
+  .pn p{font-size:26px}
+  .pn .row{flex-direction:column;align-items:flex-start}
+  /* contact */
+  .contact{padding:120px var(--pad) 0}
+  .contact h2{font-size:15vw}
+  .ct-grid{gap:50px}
+  .cta-lux{width:100%;justify-content:space-between;padding:10px 10px 10px 30px;font-size:22px;gap:12px}
+  .cta-a{width:64px;height:64px}
+  .ct-info a b{font-size:26px}
+  .ct-marq div{font-size:24vw}
+  /* case study */
+  .cs-hero{padding:110px var(--pad) 0}
+  .cs-hero h1{font-size:17vw}
+  .cs-hero .lead{font-size:26px}
+  .facts-row{grid-template-columns:1fr 1fr;padding:30px 0}
+  .cs-cover{height:70svh}
+  .cs-sec{padding:70px var(--pad)}
+  .cs-sec .txt{font-size:28px}
+  .next{min-height:100svh}.next h2{font-size:15vw}
+  /* work page */
+  .sc-title{font-size:16vw}
+  .wk-arrows{display:none}
+  .wk-count{bottom:28px}
+}

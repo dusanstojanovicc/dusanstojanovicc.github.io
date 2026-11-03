@@ -160,7 +160,7 @@ if (page === "home") {
   /* more work horizontal */
   $("#hz-track").innerHTML = PROJECTS.filter(p => p.shotD || p.imgs.length).map((p, n) => `
     <a class="card ${p.sq ? "big" : ""}" href="project.html?p=${p.slug}" data-name="${p.name}">
-      <div class="shot">${img(p.shotD || p.cover || p.imgs[0], p.name, n < 2)}${p.shotM ? `<div class="mob">${img(p.shotM, p.name + " mobile")}</div>` : ""}</div>
+      <div class="shot">${img((matchMedia("(max-width:900px)").matches ? p.cover : (p.shotD || p.cover)) || p.imgs[0], p.name, n < 2)}${p.shotM ? `<div class="mob">${img(p.shotM, p.name + " mobile")}</div>` : ""}</div>
       <div class="cap"><h3 class="disp">${p.name}</h3><span class="label">${p.cat} · ${p.year}</span></div>
     </a>`).join("");
 
@@ -219,12 +219,6 @@ if (page === "home") {
     /* HORIZONTAL gallery + PROCESS */
     const mm = gsap.matchMedia();
     mm.add("(min-width:901px)", () => {
-      const tr = $("#hz-track");
-      gsap.to(tr, { x: () => -(tr.scrollWidth - innerWidth), ease: "none", scrollTrigger: { trigger: "#more", start: "top top", end: () => "+=" + (tr.scrollWidth - innerWidth), pin: true, scrub: .8, invalidateOnRefresh: true } });
-      const pt = $(".pr-track");
-      gsap.to(pt, { x: () => -(pt.scrollWidth - innerWidth), ease: "none", scrollTrigger: { trigger: "#process", start: "top top", end: () => "+=" + (pt.scrollWidth - innerWidth), pin: true, scrub: .8, invalidateOnRefresh: true } });
-    });
-    mm.add("(max-width:900px)", () => {
       const tr = $("#hz-track");
       gsap.to(tr, { x: () => -(tr.scrollWidth - innerWidth), ease: "none", scrollTrigger: { trigger: "#more", start: "top top", end: () => "+=" + (tr.scrollWidth - innerWidth), pin: true, scrub: .8, invalidateOnRefresh: true } });
       const pt = $(".pr-track");
