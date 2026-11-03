@@ -406,3 +406,18 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;paddin
   .wk-arrows{display:none}
   .wk-count{bottom:28px}
 }
+
+/* mobile hero v2: photo in the middle (not full-screen), headline over it; showcase truly full-screen */
+@media (max-width:900px){
+  .hero{display:grid;place-items:end center}
+  .hero::after{display:none}
+  .hero .pt{position:absolute;left:0;right:0;top:17svh;margin:0 auto;width:78vw;height:auto;aspect-ratio:3/4;background:var(--bg2)}
+  .hero .pt img{height:112%;object-position:top}
+  .hero h1{position:relative;left:auto;right:auto;bottom:auto;margin:0 0 19svh;padding:0 var(--pad);text-align:center;font-size:12.6vw;line-height:.9;color:#fff;mix-blend-mode:difference;width:100%}
+  .hero .bot .label{color:var(--mute)}
+  .scroll i{background:rgba(0,0,0,.2)}.scroll i::after{background:var(--ink)}
+  .sc{height:100vh;height:100dvh}
+  .sc-top{display:none}
+  .sc-shade{background:linear-gradient(180deg,rgba(8,6,4,.45),rgba(8,6,4,.25) 40%,rgba(8,6,4,.6))}
+  .sc-title{font-size:17vw}
+}
